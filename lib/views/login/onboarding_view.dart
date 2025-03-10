@@ -93,7 +93,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                         borderRadius: BorderRadius.circular(90),
                       ),
                       padding: EdgeInsets.symmetric(vertical: 15),
-                      minimumSize: Size(double.infinity, 68)),
+                      minimumSize: Size(double.infinity, 60)),
                   child: Text(
                     currentpage == onboardingdata.length - 1
                         ? "Get Started"
@@ -113,27 +113,33 @@ class _OnboardingViewState extends State<OnboardingView> {
 
   Widget _buildOnboardingPage(
       String imagePath, String title, String description) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image.asset(
-          imagePath,
-          height: 300,
-        ), // Gambar ilustrasi
-        SizedBox(height: 40),
-        Text(
-          title,
-          style: TextStyle(
-              fontSize: 40, fontWeight: FontWeight.w600, fontFamily: "Prompt"),
-        ),
-        SizedBox(height: 20),
-        Text(
-          description,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: 16, color: ColorsApp.Grey1, fontFamily: "Prompt"),
-        ),
-      ],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            imagePath,
+            height: 300,
+          ), // Gambar ilustrasi
+          SizedBox(height: 40),
+          Text(
+            title,
+            style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.w700,
+                fontFamily: "Prompt"),
+          ),
+
+          SizedBox(height: 20),
+          Text(
+            description,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                fontSize: 16, color: ColorsApp.Grey1, fontFamily: "Prompt"),
+          ),
+        ],
+      ),
     );
   }
 }
